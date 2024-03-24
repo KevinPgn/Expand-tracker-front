@@ -1,0 +1,26 @@
+footer{
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 20px 15px;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #000000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+footer .add{
+  width: 50px;
+  height: 50px;
+  background-color: #3927ff;
+  color: #ffffff;
+  font-size: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
