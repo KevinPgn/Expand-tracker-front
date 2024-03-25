@@ -22,6 +22,6 @@ export const useExpenses = create<ExpensesState>((set) => ({
     {id: 1, amount: 100, tag: 'Food', createAt: `${date.getHours()}:${date.getMinutes()}h`},
   ],
   tags: tags,
-  addExpense: (expense) => set((state) => ({expenses: [...state.expenses, {...expense, id: state.expenses.length + 1}]})),
+  addExpense: (expense) => set((state) => ({expenses: [...state.expenses, {...expense}]})),
   addTag: (emoji: string, tag: string) => set((state) => ({tags: [...state.tags, {id: state.tags.length + 1, emoji: emoji, tag: tag}]})),
 }));

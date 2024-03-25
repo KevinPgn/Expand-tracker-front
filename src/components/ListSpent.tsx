@@ -16,13 +16,15 @@ export const ListSpent = () => {
           const tag = tags.find(tag => tag.tag === expense.tag)
           return <div className='card-expenses' key={expense.id}>
             <div className="left">
-              <span>{tag?.emoji}</span>
+              <span className='emoji'>{tag?.emoji}</span>
               <div className="tag-date">
                 <h3>{expense.tag}</h3>
                 <span>{expense.createAt}</span>
               </div>
             </div>
-            <div className="right"></div>
+            <div className="right">
+              <span>${expense.amount}</span>
+            </div>
           </div>
         })}
       </ul>

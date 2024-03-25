@@ -1,0 +1,62 @@
+.list-spent ul{
+  height: 400px;
+  overflow: auto;
+}
+.list-spent ul::-webkit-scrollbar {
+  width: 10px;
+}
+
+.list-spent ul::-webkit-scrollbar-thumb {
+  background: rgb(200, 200, 200);
+  border-radius: 10px;
+}
+
+.list-spent ul::-webkit-scrollbar-track {
+  background: rgb(243, 243, 243);
+}
+
+.list-spent .spent-today{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px 0;
+  border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.list-spent .spent-today h2{
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: gray;
+}
+
+.list-spent .spent-today span{
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: red;
+}
+
+.list-spent .card-expenses{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(243, 243, 243);
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.list-spent .card-expenses .left{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.list-spent .card-expenses .left .emoji{
+  font-size: 30px;
+}
+
+.list-spent .card-expenses .right span{
+  color: red;
+  font-size: 1.2rem;
+}
