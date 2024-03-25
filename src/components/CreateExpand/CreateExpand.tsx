@@ -7,25 +7,28 @@ import { TagsList } from "./TagsList";
 import { Confirmation } from "./Confirmation";
 
 export const CreateExpand = () => {
-  const setIsCreate = useExpenses((state) => state.setCreate)
+  const tag = useExpenses((state) => state.tag)
+  const amount = useExpenses((state) => state.amount)
 
-  const [spent, setSpent] = useState<number>(0)
-  const [tag, setTag] = useState<string>("")
+  const setIsCreate = useExpenses((state) => state.setCreate)
+  const setTag = useExpenses((state) => state.setTag)
+  const setEmoji = useExpenses((state) => state.setEmoji)
+  const setAmount = useExpenses((state) => state.setAmount)
+
   const [tabOpenModal, setTabOpenModal] = useState<boolean>(false)
   const [confirmationOpenModal, setConfirmationOpenModal] = useState<boolean>(false)
-  const [emoji, setEmoji] = useState<string>("")  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (parseInt(e.target.value) < 0) {
-      setSpent(0)
+      setAmount(0)
     } else {
-      setSpent(parseInt(e.target.value))
+      setAmount(parseInt(e.target.value))
     }
   }
 
   return <>
     <div className="create-expand">
-      <input type="number" placeholder="0" value={spent} onChange={(e) => handleChange(e)}/>
+      <input type="number" placeholder="0" value={amount} onChange={(e) => handleChange(e)}/>
       <FaArrowDownLong className="arrow-down"/>
       <div className="tags-content" onClick={() => setTabOpenModal(!tabOpenModal)}>
         <FaTags />
@@ -39,15 +42,10 @@ export const CreateExpand = () => {
 
       <div className="btn-content">
         <button className="cancel" onClick={() => setIsCreate(false)}>Cancel</button>
-        <button className="next" disabled={spent === 0 || tag === ""} onClick={() => setConfirmationOpenModal(true)}>Next</button>
+        <button className="next" disabled={amount === 0 || tag === ""} onClick={() => setConfirmationOpenModal(true)}>Next</button>
       </div>
 
-      {confirmationOpenModal && <Confirmation 
-      spent={spent}
-      tag={tag}
-      emoji={emoji}
-      confirmationOpenModal={() => setConfirmationOpenModal(!confirmationOpenModal)}
-      />}
+      {confirmationOpenModal && <Confirmation confirmationOpenModal={() => setConfirmationOpenModal(!confirmationOpenModal)}/>}
     </div>
   </>
 }

@@ -2,8 +2,10 @@ import { useExpenses } from "../../store/Expenses"
 import "./CreateExpand.css"
 import { FaPlus } from "react-icons/fa";
 
-export const TagsList = ({tabOpenModal, setTag, setEmoji}: any) => {
+export const TagsList = ({tabOpenModal}: any) => {
   const tags = useExpenses((state) => state.tags)
+  const setEmoji = useExpenses((state) => state.setEmoji)
+  const setTag = useExpenses((state) => state.setTag)
   
   const handleClick = (emoji: string, tag: string) => {
     tabOpenModal()
