@@ -4,4 +4,40 @@
   background: white;
   margin: 0 auto;
   position: relative;
+  overflow: auto;
+  color: #333;
+}
+
+.spent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+.spent .spent-title h2{
+  color: rgb(208, 208, 208);
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.spent .spent-amount{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  gap: 5px;
+}
+
+.spent .spent-amount h2{
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.spent .spent-amount span{
+  font-size: 40px;
+  font-weight: bold;
+  transform: translateY(-10px);
 }
