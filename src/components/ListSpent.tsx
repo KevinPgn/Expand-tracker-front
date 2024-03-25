@@ -5,6 +5,9 @@ export const ListSpent = () => {
   const tags = useExpenses(state => state.tags)  
   const expenses = useExpenses(state => state.expenses)
 
+  console.log(expenses);
+  
+
   return <>
     <div className="list-spent">
       <div className="spent-today">

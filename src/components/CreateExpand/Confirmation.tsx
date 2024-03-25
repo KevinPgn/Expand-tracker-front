@@ -1,4 +1,5 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { useExpenses } from "../../store/Expenses";
 
 interface ConfirmationProps {
   spent: number;
@@ -8,6 +9,13 @@ interface ConfirmationProps {
 }
 
 export const Confirmation = ({spent, tag, emoji, confirmationOpenModal}: ConfirmationProps) => {
+  const addExpense = useExpenses((state) => state.addExpense)
+  
+  const addToExpenses = (spent: number, tag: string, emoji: string) => {
+    let date = new Date()
+    addExpense({id: date.getTime(), amount: spent, tag: `${emoji} ${tag}`, createAt: `${date.getHours()}:${date.getMinutes()}h`})
+    confirmationOpenModal()
+  }
   return <>
     <div className="filer">
       <div className="confirmation">
@@ -17,15 +25,17 @@ export const Confirmation = ({spent, tag, emoji, confirmationOpenModal}: Confirm
             cancel to go back to the previous screen.</p>
 
         <div className="infos">
-          <span>${spent}</span>
+          <span className="amount">${spent}</span>
           <FaLongArrowAltRight />
-          <span>{emoji}</span>
-          <span>{tag}</span>
+          <span className="emoji">{emoji}</span>
+          <span className="tag">{tag}</span>
         </div>
 
         <div className="btn-content">
           <button className="cancel" onClick={confirmationOpenModal}>Cancel</button>
-          <button className="confirm">Confirm</button>
+          <button className="confirm"
+            onClick={() => addToExpenses(spent, tag, emoji)}
+          >Confirm</button>
         </div>
       </div>
     </div>

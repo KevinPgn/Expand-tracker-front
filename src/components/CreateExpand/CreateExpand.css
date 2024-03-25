@@ -130,3 +130,71 @@
 }
 
 /* confirmation section */
+
+.filer{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.431);
+}
+
+.confirmation{
+  width: 100%;
+  padding: 50px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: white;
+  z-index: 222;
+ box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.265); 
+}
+
+.confirmation h2{
+  font-size: 25px;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.confirmation p{
+  font-size: 20px;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.confirmation .infos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.confirmation .infos span{
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  margin-right: 10px;
+}
+
+.confirmation .infos svg{
+  font-size: 20px;
+  color: gray;
+}
+
+.confirmation .btn-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.confirmation .btn-content .confirm{
+  background: rgb(0, 0, 0);
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 150px;
+}
